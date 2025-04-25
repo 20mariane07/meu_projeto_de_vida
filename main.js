@@ -30,12 +30,16 @@ function calculaTempo(tempoObjetivo) {
     let minutos = Math.floor(segundos / 60);
     let horas = Math.floor(minutos / 60);
     let dias = Math.floor(horas / 24);
+    let meses = Math.floor(dias / 31);
+    let anos = Math.floor(meses / 12);
 
     segundos %= 60;
     minutos %= 60;
     horas %= 24;
+    dias %= 31;
+    meses %= 12;
     if (tempoFinal > 0) {
-        return [dias, horas, minutos, segundos];
+        return [anos, meses, dias, horas, minutos, segundos];
     } else {
         return [0, 0, 0, 0];
     }
